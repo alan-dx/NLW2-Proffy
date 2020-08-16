@@ -1,0 +1,20 @@
+npm install typesript -D => Instalando o typescript, permitindo que o Node interprete-o
+npx tsc --init => Criando os arquivos de config do TS
+npm install tsc-node-dev => Nodemon do typescript
+npm install knex => `Facilita os comandos com o sqlite, deixandos dar os comandos sqlite com javascript
+npm install sqlite3 => Instala o sqlite3
+
+Uso do interface => Utilzado para definir o formato de um objeto;
+
+O knex:migrate cria somente as tabelas que ainda não foram criadas, ou seja faz as alterações somente no que é novo
+
+O knexfile é o aqruivo responsável por facilitar e permitir o uso das migrations, nele existem as informações de onde esta o arquivo .sqlite (o banco de dados) e onde
+esta o arquivo connection (o aqruivo de configurações do db).
+
+As migrations são os arquivos que fazer a criação das tabelas no banco de dados (tipo os models do mongo)
+
+Relacionamentos no sqlite => Olhe o arquivo de migrations 01_create_classes => o metodo onDelete("CASCADE") deletará todas as classes associadas quando 
+o professor for deletado. o método onUpdate("CASCADE") faz o mesmo quando um item relacional for editado
+
+transaction no sqlite (trx) => Executa todas as ações de inserção no banco de dados simultaneamente, se uma delas der erro as demais serão canceladas (trx.rollback()), 
+assim como as alterações feitas. Se todas as ações forem realizadas, ela manda todas as alterações juntas (trx.commit()).
